@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Simulado FGV (Questões 14-16) — Feedback Inteligente</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--success:#10b981;--danger:#ef4444}
+    *{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071128 0%, #071a2a 100%);color:#e6eef6}
+    .wrap{max-width:920px;margin:40px auto;padding:24px}
+    header{display:flex;align-items:center;gap:16px}
+    header h1{margin:0;font-size:20px}
+    .card{background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.04);padding:18px;border-radius:12px;margin-top:18px}
+    .question-area{min-height:180px}
+    .alternativas{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+    .alt{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);cursor:pointer}
+    .alt.selected{outline:2px solid rgba(6,182,212,0.18);background:rgba(6,182,212,0.04)}
+    .controls{display:flex;gap:8px;margin-top:14px}
+    button{background:var(--accent);color:#012; border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    .summary{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:18px}
+    .progress{height:10px;background:rgba(255,255,255,0.03);border-radius:6px;overflow:hidden}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);width:0%}
+    .insights{font-size:14px;color:var(--muted)}
+    .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--muted);margin-right:6px}
+    .result-score{font-size:32px;margin:0}
+    footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
+    @media(max-width:860px){.summary{grid-template-columns:1fr;}.wrap{padding:12px}} 
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42'><rect rx='8' width='42' height='42' fill='%2306b6d4'/></svg>" alt="logo" style="width:42px;height:42px;border-radius:8px">
+      <div>
+        <h1>Simulado — Questões (14 a 16) — estilo FGV</h1>
+        <div style="color:var(--muted);font-size:13px">3 questões — feedback por disciplina e dicas de estudo</div>
+      </div>
+    </header>
+
+    <section class="card" id="app">
+      <div class="question-area" id="questionArea">
+        <!-- dynamic -->
+      </div>
+
+      <div class="controls">
+        <button id="prevBtn" class="ghost">◀ Anterior</button>
+        <button id="nextBtn">Próxima ▶</button>
+        <button id="submitBtn" class="ghost" style="margin-left:auto">Enviar respostas</button>
+        <button id="resetBtn" class="ghost">Reiniciar</button>
+      </div>
+
+      <div class="summary" id="summary" style="display:none">
+        <div class="card" style="padding:14px">
+          <h3>Resumo</h3>
+          <div style="margin-top:8px">
+            <div class="progress"><i id="progressBar"></i></div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px">
+              <small class="insights" id="progressText">0 / 3 respondidas</small>
+              <small class="insights" id="correctText">0 corretas</small>
+            </div>
+          </div>
+
+          <div style="margin-top:12px">
+            <h4 style="margin:0 0 8px 0">Insights</h4>
+            <div id="insightsList" class="insights">—</div>
+          </div>
+        </div>
+
+        <div class="card" style="padding:14px">
+          <h3>Score</h3>
+          <p class="result-score" id="score">0 / 3</p>
+          <div style="margin-top:8px">
+            <h4 style="margin:6px 0">Pontos para melhorar</h4>
+            <div id="weaknesses">—</div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+    <footer>
+      Projetado para ser hospedado no GitHub Pages. Questões adaptadas para evitar violação de direitos autorais.
+    </footer>
+  </div>
+
+  <script>
+  // QUESTÕES: versões originais e adaptadas (IDs 14-16). NÃO copie questões protegidas por direitos autorais.
+  const questoes = [
+    {
+      id: 14,
+      categoria: 'Direito Constitucional',
+      nivel: 'Médio',
+      enunciado: 'Sobre os direitos e garantias fundamentais previstos na Constituição, marque a alternativa correta (versão adaptada).',
+      alternativas: [
+        'Os direitos fundamentais se limitam às liberdades individuais previstas apenas na Constituição Federal.',
+        'Os direitos sociais são objetivos de políticas públicas, sem previsão de proteção jurídica específica.',
+        'A Constituição prevê a proteção dos direitos fundamentais, que podem ser exercidos tanto individualmente quanto coletivamente.',
+        'Somente pessoas físicas podem invocar os direitos fundamentais, excluindo-se pessoas jurídicas.'
+      ],
+      correta: 2,
+      explicacao: 'Direitos fundamentais podem ser exercidos individualmente e coletivamente; pessoas jurídicas também podem ter proteção para certos direitos (por exemplo, direitos patrimoniais e de personalidade em alguns casos).'
+    },
+    {
+      id: 15,
+      categoria: 'Administração Pública',
+      nivel: 'Médio',
+      enunciado: 'No regime jurídico-administrativo, assinale a alternativa que melhor descreve o princípio da legalidade administrativa (versão adaptada).',
+      alternativas: [
+        'A administração pública pode agir quando houver conveniência e oportunidade, independentemente da lei.',
+        'A administração pública só pode agir quando houver previsão legal que autorize a atuação.',
+        'O princípio da legalidade obriga a administração a seguir regras internas, sem necessidade de lei formal.',
+        'A legalidade permite que atos administrativos sejam editados sem sujeição a normas constitucionais.'
+      ],
+      correta: 1,
+      explicacao: 'O princípio da legalidade impõe que a administração pública só realize atos autorizados por lei, salvo exceções previstas no ordenamento jurídico.'
+    },
+    {
+      id: 16,
+      categoria: 'Língua Portuguesa',
+      nivel: 'Fácil',
+      enunciado: 'Leia a frase: "Os alunos, juntamente com o professor, ____ ao auditório." Assinale a alternativa que completa corretamente a frase.',
+      alternativas: [
+        'dirigiu',
+        'dirigiram',
+        'dirigimos',
+        'será dirigido'
+      ],
+      correta: 1,
+      explicacao: 'O sujeito composto (os alunos, juntamente com o professor) exige o verbo no plural: "dirigiram".'
+    }
+  ];
+
+  // Estado
+  let estado = { index: 0, respostas: Array(questoes.length).fill(null) };
+
+  // Elementos
+  const questionArea = document.getElementById('questionArea');
+  const prevBtn = document.getElementById('prevBtn');
+  const nextBtn = document.getElementById('nextBtn');
+  const submitBtn = document.getElementById('submitBtn');
+  const resetBtn = document.getElementById('resetBtn');
+  const summaryEl = document.getElementById('summary');
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
+  const correctText = document.getElementById('correctText');
+  const insightsList = document.getElementById('insightsList');
+  const scoreEl = document.getElementById('score');
+  const weaknessesEl = document.getElementById('weaknesses');
+
+  // Inicialização
+  function init(){
+    // recuperar estado local
+    const saved = localStorage.getItem('simulado_estado_v1');
+    if(saved){
+      try{estado = JSON.parse(saved);}catch(e){}
+    }
+    renderQuestion();
+    updateControls();
+  }
+
+  function saveState(){localStorage.setItem('simulado_estado_v1', JSON.stringify(estado));}
+
+  function renderQuestion(){
+    const q = questoes[estado.index];
+    questionArea.innerHTML = `
+      <div style="display:flex;justify-content:space-between;align-items:flex-start">
+        <div>
+          <div class="tag">ID ${q.id}</div>
+          <div style="font-weight:600;margin-top:8px">${q.categoria} — <small style='color:var(--muted)'>${q.nivel}</small></div>
+        </div>
+        <div style="text-align:right;color:var(--muted)">Questão ${estado.index+1} de ${questoes.length}</div>
+      </div>
+      <h3 style="margin-top:12px">${escapeHtml(q.enunciado)}</h3>
+      <div class="alternativas">
+        ${q.alternativas.map((alt, i)=>{
+          const selected = estado.respostas[estado.index] === i ? 'selected' : '';
+          return `<div class="alt ${selected}" data-index="${i}">${String.fromCharCode(65+i)}) ${escapeHtml(alt)}</div>`
+        }).join('')}
+      </div>
+      <div style="margin-top:10px;color:var(--muted);font-size:13px">${estado.respostas[estado.index] === null ? 'Você ainda não respondeu esta questão.' : 'Resposta marcada: ' + String.fromCharCode(65+estado.respostas[estado.index])}</div>
+    `;
+
+    // listeners para alternativas
+    document.querySelectorAll('.alt').forEach(el=>{
+      el.addEventListener('click', ()=>{
+        const choice = Number(el.getAttribute('data-index'));
+        estado.respostas[estado.index] = choice;
+        saveState();
+        renderQuestion();
+        updateProgressUI();
+      });
+    });
+  }
+
+  function updateControls(){
+    prevBtn.disabled = estado.index === 0;
+    nextBtn.disabled = estado.index === questoes.length-1;
+  }
+
+  prevBtn.addEventListener('click', ()=>{ if(estado.index>0){estado.index--; renderQuestion(); updateControls();}});
+  nextBtn.addEventListener('click', ()=>{ if(estado.index<questoes.length-1){estado.index++; renderQuestion(); updateControls();}});
+  resetBtn.addEventListener('click', ()=>{ if(confirm('Reiniciar respostas e progresso?')){estado = {index:0,respostas:Array(questoes.length).fill(null)}; saveState(); renderQuestion(); updateControls(); updateProgressUI(); summaryEl.style.display='none';}});
+
+  submitBtn.addEventListener('click', ()=>{
+    // checar se há respostas em branco
+    const naoRespondidas = estado.respostas.filter(r=>r===null).length;
+    if(naoRespondidas>0){
+      if(!confirm(`Você deixou ${naoRespondidas} questão(ões) em branco. Deseja enviar mesmo assim?`)) return;
+    }
+    computeResults();
+  });
+
+  function computeResults(){
+    const total = questoes.length;
+    let corretas = 0;
+    const errosPorCategoria = {};
+    const acertosPorCategoria = {};
+    const detalhes = [];
+
+    questoes.forEach((q,i)=>{
+      const resp = estado.respostas[i];
+      const isCorrect = resp === q.correta;
+      if(isCorrect) corretas++;
+      // contar por categoria
+      if(isCorrect) acertosPorCategoria[q.categoria] = (acertosPorCategoria[q.categoria]||0)+1;
+      else errosPorCategoria[q.categoria] = (errosPorCategoria[q.categoria]||0)+1;
+
+      detalhes.push({q,resp,isCorrect});
+    });
+
+    // montar insights
+    const insights = [];
+    if(corretas===total) insights.push('Ótimo! Respondeu todas corretamente — manter revisão leve.');
+    else if(corretas/total >= 0.6) insights.push('Bom desempenho, foque nas categorias onde errou.');
+    else insights.push('Desempenho abaixo do esperado — revisar conceitos básicos das categorias indicadas.');
+
+    // recomendações por categoria
+    const weaknesses = Object.keys(errosPorCategoria).map(cat=>({categoria:cat, erros:errosPorCategoria[cat], recomendacao: recomendacaoPorCategoria(cat)}));
+
+    // mostra resultados
+    summaryEl.style.display='grid';
+    const pct = Math.round((estado.respostas.filter(r=>r!==null).length/total)*100);
+    progressBar.style.width = pct + '%';
+    progressText.textContent = `${estado.respostas.filter(r=>r!==null).length} / ${total} respondidas`;
+    correctText.textContent = `${corretas} corretas`;
+    insightsList.innerHTML = insights.map(i=>`<div>• ${escapeHtml(i)}</div>`).join('');
+    scoreEl.textContent = `${corretas} / ${total}`;
+    if(weaknesses.length===0){ weaknessesEl.innerHTML = '<div style="color:var(--success)">Nenhuma fraqueza identificada — revise os pontos de atenção.</div>'; }
+    else{
+      weaknessesEl.innerHTML = weaknesses.map(w=>`<div style="margin-bottom:8px"><strong>${escapeHtml(w.categoria)}</strong> — Erros: ${w.erros}<div style="color:var(--muted);font-size:13px;margin-top:4px">${escapeHtml(w.recomendacao)}</div></div>`).join('');
+    }
+
+    // mostrar feedback detalhado por questão
+    const detalhesHtml = detalhes.map((d,idx)=>{
+      const status = d.isCorrect ? '✔ Correta' : '✖ Incorreta';
+      return `
+        <div style="margin-top:12px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);">
+          <div style="font-weight:600">Q${questoes[idx].id} — ${questoes[idx].categoria} <small style='color:var(--muted)'>(${questoes[idx].nivel})</small></div>
+          <div style="margin-top:6px">${escapeHtml(questoes[idx].enunciado)}</div>
+          <div style="margin-top:8px;color:${d.isCorrect? 'var(--success)':'var(--danger)'}">${status}</div>
+          <div style="margin-top:6px;color:var(--muted);font-size:13px">Resposta correta: ${String.fromCharCode(65+questoes[idx].correta)} — ${escapeHtml(questoes[idx].alternativas[questoes[idx].correta])}</div>
+          <div style="margin-top:6px;color:var(--muted);font-size:13px">Sua resposta: ${d.resp===null? '<em>Sem resposta</em>' : String.fromCharCode(65+d.resp) + ' — ' + escapeHtml(questoes[idx].alternativas[d.resp])}</div>
+          <div style="margin-top:8px;color:var(--muted);font-size:13px">Explicação: ${escapeHtml(questoes[idx].explicacao)}</div>
+        </div>
+      `;
+    }).join('');
+
+    // inserir abaixo do resumo
+    const detailsContainer = document.createElement('div');
+    detailsContainer.className='card';
+    detailsContainer.style.marginTop='12px';
+    detailsContainer.innerHTML = `<h3>Detalhamento das questões</h3>${detalhesHtml}`;
+    // limpar antigos
+    const existing = document.getElementById('detContainer');
+    if(existing) existing.remove();
+    detailsContainer.id = 'detContainer';
+    document.getElementById('app').appendChild(detailsContainer);
+
+    // salvar relatório rápido
+    const relatorio = {data:new Date().toISOString(), total, corretas, errosPorCategoria, acertosPorCategoria, respostas:estado.respostas};
+    localStorage.setItem('simulado_relatorio_v1', JSON.stringify(relatorio));
+  }
+
+  function recomendacaoPorCategoria(cat){
+    const dicas = {
+      'Direito Constitucional': 'Revisar os conceitos de direitos e garantias fundamentais, estudo de casos e interpretação constitucional. Consulte resumos, esquemas e resolução de questões comentadas para fixar.' ,
+      'Administração Pública': 'Foque no princípio da legalidade, poderes e deveres da administração, e diferenciação entre atos administrativos e atos judiciais. Faça exercícios práticos com análise de enunciados.' ,
+      'Língua Portuguesa': 'Reforce concordância verbal e nominal, análise sintática e leitura interpretativa. Pratique com exercícios de gramática contextualizados.'
+    };
+    return dicas[cat] || 'Revisar o conteúdo teórico, priorizando questões comentadas e resumos estruturados.';
+  }
+
+  function updateProgressUI(){
+    const total = questoes.length;
+    const filled = estado.respostas.filter(r=>r!==null).length;
+    const pct = Math.round((filled/total)*100);
+    progressBar.style.width = pct + '%';
+    progressText.textContent = `${filled} / ${total} respondidas`;
+    correctText.textContent = `-`;
+  }
+
+  function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m]}); }
+
+  // start
+  init();
+  updateProgressUI();
+  </script>
+</body>
+</html>
