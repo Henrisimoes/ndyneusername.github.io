@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Simulado FGV (Questões 14-16) — Feedback Inteligente</title>
+  <title>Simulado Contabilidade (CPC 14 e 16) — Feedback Inteligente</title>
   <style>
-    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--muted:#94a3b8;--success:#10b981;--danger:#ef4444}
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--success:#10b981;--danger:#ef4444;--muted:#94a3b8}
     *{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
     html,body{height:100%;margin:0;background:linear-gradient(180deg,#071128 0%, #071a2a 100%);color:#e6eef6}
     .wrap{max-width:920px;margin:40px auto;padding:24px}
@@ -17,16 +17,17 @@
     .alt{background:rgba(255,255,255,0.02);padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.02);cursor:pointer}
     .alt.selected{outline:2px solid rgba(6,182,212,0.18);background:rgba(6,182,212,0.04)}
     .controls{display:flex;gap:8px;margin-top:14px}
-    button{background:var(--accent);color:#012; border:none;padding:10px 14px;border-radius:8px;cursor:pointer}
+    button{background:var(--accent);color:#012; border:none;padding:10px 14px;border-radius:8px;cursor:pointer; font-weight: 600;}
     button.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+    button:disabled{opacity:0.5;cursor:not-allowed}
     .summary{display:grid;grid-template-columns:1fr 320px;gap:16px;margin-top:18px}
     .progress{height:10px;background:rgba(255,255,255,0.03);border-radius:6px;overflow:hidden}
-    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);width:0%}
+    .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent),#7c3aed);width:0%;transition:width 0.3s ease}
     .insights{font-size:14px;color:var(--muted)}
     .tag{display:inline-block;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.02);font-size:12px;color:var(--muted);margin-right:6px}
     .result-score{font-size:32px;margin:0}
     footer{margin-top:24px;text-align:center;color:var(--muted);font-size:13px}
-    @media(max-width:860px){.summary{grid-template-columns:1fr;}.wrap{padding:12px}} 
+    @media(max-width:860px){.summary{grid-template-columns:1fr;}.wrap{padding:12px}}
   </style>
 </head>
 <body>
@@ -34,15 +35,14 @@
     <header>
       <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42'><rect rx='8' width='42' height='42' fill='%2306b6d4'/></svg>" alt="logo" style="width:42px;height:42px;border-radius:8px">
       <div>
-        <h1>Simulado — Questões (14 a 16) — estilo FGV</h1>
-        <div style="color:var(--muted);font-size:13px">3 questões — feedback por disciplina e dicas de estudo</div>
+        <h1>Simulado Contabilidade — CPC 14 e CPC 16 (Estilo FGV)</h1>
+        <div style="color:var(--muted);font-size:13px">20 questões — feedback por disciplina e dicas de estudo</div>
       </div>
     </header>
 
     <section class="card" id="app">
       <div class="question-area" id="questionArea">
-        <!-- dynamic -->
-      </div>
+        </div>
 
       <div class="controls">
         <button id="prevBtn" class="ghost">◀ Anterior</button>
@@ -57,7 +57,7 @@
           <div style="margin-top:8px">
             <div class="progress"><i id="progressBar"></i></div>
             <div style="display:flex;justify-content:space-between;margin-top:8px">
-              <small class="insights" id="progressText">0 / 3 respondidas</small>
+              <small class="insights" id="progressText">0 / 20 respondidas</small>
               <small class="insights" id="correctText">0 corretas</small>
             </div>
           </div>
@@ -70,7 +70,7 @@
 
         <div class="card" style="padding:14px">
           <h3>Score</h3>
-          <p class="result-score" id="score">0 / 3</p>
+          <p class="result-score" id="score">0 / 20</p>
           <div style="margin-top:8px">
             <h4 style="margin:6px 0">Pontos para melhorar</h4>
             <div id="weaknesses">—</div>
@@ -86,49 +86,309 @@
   </div>
 
   <script>
-  // QUESTÕES: versões originais e adaptadas (IDs 14-16). NÃO copie questões protegidas por direitos autorais.
+  // QUESTÕES: adaptadas de concursos da banca FGV sobre CPC 14 e CPC 16.
   const questoes = [
+    // CPC 16 - Estoques
     {
-      id: 14,
-      categoria: 'Direito Constitucional',
+      id: 1,
+      categoria: 'Contabilidade - CPC 16',
       nivel: 'Médio',
-      enunciado: 'Sobre os direitos e garantias fundamentais previstos na Constituição, marque a alternativa correta (versão adaptada).',
+      enunciado: 'De acordo com o CPC 16, os estoques devem ser mensurados pelo valor de custo ou pelo valor realizável líquido, dos dois o menor. O que representa o Valor Realizável Líquido?',
       alternativas: [
-        'Os direitos fundamentais se limitam às liberdades individuais previstas apenas na Constituição Federal.',
-        'Os direitos sociais são objetivos de políticas públicas, sem previsão de proteção jurídica específica.',
-        'A Constituição prevê a proteção dos direitos fundamentais, que podem ser exercidos tanto individualmente quanto coletivamente.',
-        'Somente pessoas físicas podem invocar os direitos fundamentais, excluindo-se pessoas jurídicas.'
+        'O preço de venda estimado no curso normal dos negócios deduzido dos custos estimados para sua produção.',
+        'O preço de venda estimado no curso normal dos negócios, deduzido dos custos estimados para sua conclusão e dos gastos estimados necessários para se concretizar a venda.',
+        'O valor de mercado do item em uma data específica, sem quaisquer deduções.',
+        'O custo de reposição do estoque na data do balanço.',
+        'O valor presente dos fluxos de caixa futuros esperados do item.'
+      ],
+      correta: 1,
+      explicacao: 'O Valor Realizável Líquido é o preço de venda estimado menos os custos para concluir a produção e os gastos para vender (ex: comissões, fretes). Esta é a definição exata do CPC 16.'
+    },
+    {
+      id: 2,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Médio',
+      enunciado: 'Uma empresa industrial incorreu nos seguintes gastos na produção de um item: matéria-prima R$100, mão de obra direta R$50, e custos indiretos de fabricação fixos de R$30. Além disso, teve R$10 de despesas de vendas. Qual é o custo do estoque a ser reconhecido?',
+      alternativas: [
+        'R$ 150',
+        'R$ 160',
+        'R$ 180',
+        'R$ 190',
+        'R$ 100'
       ],
       correta: 2,
-      explicacao: 'Direitos fundamentais podem ser exercidos individualmente e coletivamente; pessoas jurídicas também podem ter proteção para certos direitos (por exemplo, direitos patrimoniais e de personalidade em alguns casos).'
+      explicacao: 'O custo do estoque inclui todos os custos de aquisição e transformação. Portanto, soma-se a matéria-prima (100), a mão de obra direta (50) e os CIF (30), totalizando R$ 180. Despesas de vendas não compõem o custo do estoque.'
+    },
+    {
+      id: 3,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Fácil',
+      enunciado: 'Qual dos seguintes itens NÃO deve ser incluído no custo dos estoques de uma indústria?',
+      alternativas: [
+        'Custo de transporte da matéria-prima até a fábrica.',
+        'Salário do supervisor da linha de produção.',
+        'Depreciação das máquinas da fábrica.',
+        'Valor anormal de desperdício de materiais.',
+        'Mão de obra direta aplicada ao produto.'
+      ],
+      correta: 3,
+      explicacao: 'Desperdícios anormais de materiais, mão de obra ou outros insumos de produção devem ser reconhecidos como despesa no período em que ocorrem e não são incluídos no custo do estoque (CPC 16, item 16).'
+    },
+    {
+      id: 4,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Difícil',
+      enunciado: 'Uma empresa comercial adquiriu mercadorias por R$ 50.000, pagando R$ 2.000 de frete e R$ 1.000 de seguro para o transporte. Obteve um desconto comercial de R$ 5.000 no momento da compra. Qual o valor a ser registrado no estoque?',
+      alternativas: [
+        'R$ 50.000',
+        'R$ 45.000',
+        'R$ 53.000',
+        'R$ 48.000',
+        'R$ 58.000'
+      ],
+      correta: 3,
+      explicacao: 'O custo de aquisição inclui o preço de compra, impostos não recuperáveis, frete e seguro, deduzido de descontos comerciais. Cálculo: (50.000 - 5.000 de desconto) + 2.000 de frete + 1.000 de seguro = R$ 48.000.'
+    },
+    {
+      id: 5,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Médio',
+      enunciado: 'Em 31/12, uma empresa possuía um item em estoque com custo de R$ 1.000. Seu preço de venda estimado era de R$ 1.200, e os gastos para vender eram de R$ 250. Qual ajuste a empresa deve fazer?',
+      alternativas: [
+        'Nenhum ajuste, pois o preço de venda é maior que o custo.',
+        'Reconhecer uma perda de R$ 50.',
+        'Reconhecer um ganho de R$ 200.',
+        'Reconhecer uma perda de R$ 250.',
+        'Reconhecer uma perda de R$ 1.000.'
+      ],
+      correta: 1,
+      explicacao: 'O estoque é mensurado pelo menor valor entre o custo (R$ 1.000) e o valor realizável líquido. O VRL é Preço de Venda (1.200) - Gastos para Vender (250) = R$ 950. Como o VRL (950) é menor que o custo (1.000), a empresa deve reconhecer uma perda por desvalorização de R$ 50.'
+    },
+    {
+      id: 6,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Fácil',
+      enunciado: 'Assinale a alternativa que apresenta um método de custeio de estoque NÃO permitido pelo CPC 16.',
+      alternativas: [
+        'Primeiro que Entra, Primeiro que Sai (PEPS).',
+        'Custo Médio Ponderado.',
+        'Custo Específico.',
+        'Último que Entra, Primeiro que Sai (UEPS).',
+        'Todos os métodos citados são permitidos.'
+      ],
+      correta: 3,
+      explicacao: 'O CPC 16 permite o uso dos métodos PEPS (ou FIFO), Custo Médio Ponderado e Custo Específico. O método UEPS (ou LIFO) não é permitido pelas normas contábeis brasileiras (CPC) nem pelas internacionais (IFRS).'
+    },
+    {
+      id: 7,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Médio',
+      enunciado: 'Os custos de armazenagem são geralmente incluídos no custo do estoque?',
+      alternativas: [
+        'Sim, sempre e sem exceção.',
+        'Não, são sempre reconhecidos como despesa do período.',
+        'Apenas se forem necessários no processo produtivo antes de uma nova fase de produção.',
+        'Apenas para produtos importados durante o desembaraço aduaneiro.',
+        'Sim, mas apenas para produtos acabados.'
+      ],
+      correta: 2,
+      explicacao: 'O CPC 16 (item 16, c) estabelece que os custos de armazenagem devem ser reconhecidos como despesa, a menos que sejam necessários para o processo produtivo, como por exemplo a maturação de queijos ou vinhos. A armazenagem de produto acabado é despesa.'
+    },
+    {
+      id: 8,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Difícil',
+      enunciado: 'Uma empresa reverteu uma perda por desvalorização do estoque que havia sido reconhecida em período anterior. Como essa reversão deve ser tratada?',
+      alternativas: [
+        'Como um ajuste direto no Patrimônio Líquido.',
+        'Como uma receita não operacional no resultado.',
+        'Como uma redução no valor do custo dos produtos vendidos (CPV) do período.',
+        'Como um ganho em Outros Resultados Abrangentes (ORA).',
+        'A reversão de perda de estoque não é permitida.'
+      ],
+      correta: 2,
+      explicacao: 'A reversão de uma perda por desvalorização de estoque é reconhecida como uma redução do CPV no período em que a reversão ocorre. O valor da reversão é limitado ao montante da perda originalmente reconhecida.'
+    },
+     {
+      id: 9,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Médio',
+      enunciado: 'De acordo com o CPC 16, os juros sobre empréstimos para financiar a aquisição de estoques em grande quantidade (compra de oportunidade) devem ser:',
+      alternativas: [
+        'Capitalizados ao custo do estoque.',
+        'Reconhecidos como despesa financeira no resultado do período.',
+        'Registrados como um ativo intangível.',
+        'Amortizados ao longo da vida útil do estoque.',
+        'Registrados como ajuste de avaliação patrimonial.'
+      ],
+      correta: 1,
+      explicacao: 'Regra geral, os custos de financiamento são despesas. No entanto, o CPC 07 (e indiretamente o CPC 16) permite a capitalização de juros para ativos que demandam um longo período de tempo para ficarem prontos (ativos qualificáveis), o que normalmente não é o caso de estoques. Assim, são reconhecidos como despesa financeira.'
+    },
+    {
+      id: 10,
+      categoria: 'Contabilidade - CPC 16',
+      nivel: 'Fácil',
+      enunciado: 'A principal diretriz do CPC 16 para a mensuração de estoques é:',
+      alternativas: [
+        'Mensurar sempre pelo valor justo.',
+        'Mensurar sempre pelo custo histórico.',
+        'Mensurar pelo valor de custo ou valor realizável líquido, o que for maior.',
+        'Nunca permitir o reconhecimento de perdas antes da venda.',
+        'Evitar que o estoque seja registrado por um valor superior àquele que se espera realizar com sua venda ou uso.'
+      ],
+      correta: 4,
+      explicacao: 'O princípio fundamental do CPC 16 é que os estoques não devem ser registrados por um valor maior do que o que se espera recuperar com eles. Por isso a regra: mensurar pelo custo ou valor realizável líquido, dos dois, o menor.'
+    },
+    // CPC 14 - Instrumentos Financeiros
+    {
+      id: 11,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Médio',
+      enunciado: 'Conforme o CPC 14 (R1), um ativo financeiro deve ser mensurado ao Custo Amortizado se duas condições forem atendidas. Quais são elas?',
+      alternativas: [
+        'O ativo é mantido para ser negociado no curto prazo e seus fluxos de caixa são pagamentos de juros.',
+        'O modelo de negócios é receber fluxos de caixa contratuais e os fluxos de caixa contratuais são somente pagamentos de principal e juros.',
+        'O ativo é um instrumento de patrimônio e a empresa optou por reconhecer variações de valor justo no resultado.',
+        'O modelo de negócios é vender o ativo financeiro e seus fluxos de caixa são somente pagamentos de principal.',
+        'O ativo é derivativo e usado para hedge.'
+      ],
+      correta: 1,
+      explicacao: 'Para ser classificado como Custo Amortizado, o ativo financeiro precisa passar em dois testes: 1) Teste do Modelo de Negócios (objetivo é manter para receber os fluxos de caixa) e 2) Teste das Características dos Fluxos de Caixa Contratuais (fluxos são "Somente Pagamentos de Principal e Juros" - SPPJ).'
+    },
+    {
+      id: 12,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Difícil',
+      enunciado: 'Uma empresa investiu em ações de outra companhia com o objetivo de vendê-las no curto prazo para obter lucro com a flutuação de preços. Como este ativo financeiro deve ser classificado e mensurado?',
+      alternativas: [
+        'Ao Custo Amortizado.',
+        'Ao Valor Justo por meio de Outros Resultados Abrangentes (VJORA).',
+        'Ao Valor Justo por meio do Resultado (VJR).',
+        'Pelo método de equivalência patrimonial.',
+        'Como um investimento em coligada.'
+      ],
+      correta: 2,
+      explicacao: 'Ativos financeiros mantidos com o propósito de negociação (venda no curto prazo) são, por definição, classificados como Mensurados ao Valor Justo por meio do Resultado (VJR). As variações no seu valor justo afetam diretamente o resultado do período.'
+    },
+    {
+      id: 13,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Médio',
+      enunciado: 'O que significa o termo "perda de crédito esperada" no contexto do CPC 14?',
+      alternativas: [
+        'Uma perda que já ocorreu e foi confirmada com a inadimplência do devedor.',
+        'A estimativa de perdas futuras com base em eventos passados, condições atuais e previsões de condições econômicas futuras.',
+        'Apenas a perda que se espera ocorrer nos próximos 12 meses.',
+        'A perda máxima possível em um instrumento financeiro.',
+        'Uma provisão genérica para todas as contas a receber, sem análise individual.'
+      ],
+      correta: 1,
+      explicacao: 'O modelo de "perda esperada" do CPC 14 é proativo. Ele exige o reconhecimento de uma provisão para perdas de crédito (impairment) com base não apenas em eventos passados, mas também em informações futuras e prospectivas.'
+    },
+    {
+      id: 14,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Difícil',
+      enunciado: 'Uma empresa adquire títulos de dívida com o modelo de negócios de "manter para receber fluxos de caixa contratuais E vender". Os fluxos de caixa são SPPJ. Qual a classificação correta?',
+      alternativas: [
+        'Custo Amortizado.',
+        'Valor Justo por meio do Resultado (VJR).',
+        'Valor Justo por meio de Outros Resultados Abrangentes (VJORA).',
+        'Custo, menos impairment.',
+        'Depende da intenção da gestão a cada período.'
+      ],
+      correta: 2,
+      explicacao: 'O modelo de negócios híbrido de "manter para receber E vender" (hold to collect and sell) leva à classificação de Valor Justo por meio de Outros Resultados Abrangentes (VJORA). As variações do valor justo vão para o PL (ORA), e os juros e impairment para o resultado.'
     },
     {
       id: 15,
-      categoria: 'Administração Pública',
-      nivel: 'Médio',
-      enunciado: 'No regime jurídico-administrativo, assinale a alternativa que melhor descreve o princípio da legalidade administrativa (versão adaptada).',
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Fácil',
+      enunciado: 'Qual dos seguintes itens é um exemplo de instrumento financeiro?',
       alternativas: [
-        'A administração pública pode agir quando houver conveniência e oportunidade, independentemente da lei.',
-        'A administração pública só pode agir quando houver previsão legal que autorize a atuação.',
-        'O princípio da legalidade obriga a administração a seguir regras internas, sem necessidade de lei formal.',
-        'A legalidade permite que atos administrativos sejam editados sem sujeição a normas constitucionais.'
+        'Estoque de matéria-prima.',
+        'Imobilizado (máquinas).',
+        'Uma debênture emitida por outra empresa.',
+        'Despesa de aluguel paga antecipadamente.',
+        'Software desenvolvido internamente.'
       ],
-      correta: 1,
-      explicacao: 'O princípio da legalidade impõe que a administração pública só realize atos autorizados por lei, salvo exceções previstas no ordenamento jurídico.'
+      correta: 2,
+      explicacao: 'Um instrumento financeiro é um contrato que gera um ativo financeiro para uma entidade e um passivo financeiro ou instrumento de patrimônio para outra. Uma debênture é um título de dívida, sendo um ativo financeiro para quem a detém.'
     },
     {
       id: 16,
-      categoria: 'Língua Portuguesa',
-      nivel: 'Fácil',
-      enunciado: 'Leia a frase: "Os alunos, juntamente com o professor, ____ ao auditório." Assinale a alternativa que completa corretamente a frase.',
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Médio',
+      enunciado: 'Os custos de transação (ex: taxas de corretagem) na aquisição de um ativo financeiro classificado como "Valor Justo por meio do Resultado" (VJR) devem ser:',
       alternativas: [
-        'dirigiu',
-        'dirigiram',
-        'dirigimos',
-        'será dirigido'
+        'Adicionados ao valor inicial do ativo financeiro.',
+        'Reconhecidos imediatamente como despesa no resultado.',
+        'Amortizados ao longo da vida do ativo financeiro.',
+        'Registrados em Outros Resultados Abrangentes (ORA).',
+        'Ignorados para fins contábeis.'
       ],
       correta: 1,
-      explicacao: 'O sujeito composto (os alunos, juntamente com o professor) exige o verbo no plural: "dirigiram".'
+      explicacao: 'Para ativos financeiros VJR, os custos de transação são lançados diretamente como despesa. Para ativos classificados como Custo Amortizado ou VJORA, esses custos são capitalizados (somados) ao valor do ativo.'
+    },
+    {
+      id: 17,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Difícil',
+      enunciado: 'O que é "Hedge Accounting" (Contabilidade de Hedge), conforme o CPC 14?',
+      alternativas: [
+        'Uma estratégia para especular no mercado financeiro e maximizar lucros.',
+        'Uma designação contábil especial que permite que os ganhos e perdas do instrumento de hedge compensem os ganhos e perdas do item protegido no resultado.',
+        'A prática de avaliar todos os instrumentos financeiros pelo seu valor de custo.',
+        'A obrigação de reconhecer todas as perdas com derivativos imediatamente no resultado.',
+        'A separação de um derivativo embutido de seu contrato principal.'
+      ],
+      correta: 1,
+      explicacao: 'Hedge Accounting é um tratamento contábil opcional que visa demonstrar o efeito da gestão de riscos da empresa. Ele correlaciona o reconhecimento dos resultados do instrumento de hedge (que protege) com o do item protegido, evitando volatilidade artificial no resultado.'
+    },
+    {
+      id: 18,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Médio',
+      enunciado: 'Um passivo financeiro, como um empréstimo bancário, é tipicamente mensurado subsequentemente:',
+      alternativas: [
+        'Pelo Valor Justo por meio do Resultado.',
+        'Pelo Custo Amortizado, usando o método dos juros efetivos.',
+        'Pelo valor do pagamento futuro, sem desconto.',
+        'Pelo maior valor entre o custo e o valor justo.',
+        'Pelo Valor Justo por meio de Outros Resultados Abrangentes.'
+      ],
+      correta: 1,
+      explicacao: 'A grande maioria dos passivos financeiros (empréstimos, financiamentos, títulos a pagar) é mensurada subsequentemente ao Custo Amortizado. Isso significa que os juros são reconhecidos ao longo do tempo pela taxa de juros efetiva.'
+    },
+    {
+      id: 19,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Fácil',
+      enunciado: 'O que significa "baixar" (derecognition) um ativo financeiro?',
+      alternativas: [
+        'Reconhecer uma perda por desvalorização (impairment).',
+        'Transferir o ativo para o imobilizado.',
+        'Remover o ativo financeiro do balanço patrimonial da entidade.',
+        'Alterar sua classificação de Custo Amortizado para Valor Justo.',
+        'Vender o ativo com direito de recompra.'
+      ],
+      correta: 2,
+      explicacao: 'A baixa de um ativo financeiro ocorre quando a entidade perde o controle sobre os direitos contratuais aos fluxos de caixa do ativo, geralmente por meio de venda ou expiração desses direitos. O ativo é, então, removido do balanço.'
+    },
+    {
+      id: 20,
+      categoria: 'Contabilidade - CPC 14',
+      nivel: 'Difícil',
+      enunciado: 'Uma empresa emite um título de dívida que pode ser convertido em um número fixo de suas próprias ações (debênture conversível). De acordo com os CPCs, como este instrumento deve ser tratado pelo emissor?',
+      alternativas: [
+        'Totalmente como um passivo financeiro.',
+        'Totalmente como um instrumento de patrimônio.',
+        'Como um instrumento híbrido, separando os componentes de passivo e de patrimônio.',
+        'Como uma receita diferida até a data da conversão.',
+        'Depende da probabilidade de conversão ser exercida.'
+      ],
+      correta: 2,
+      explicacao: 'Instrumentos compostos, como debêntures conversíveis, possuem componentes de passivo (a obrigação de pagar juros e principal) e de patrimônio (a opção de conversão). O emissor deve separar os dois componentes no reconhecimento inicial.'
     }
   ];
 
@@ -152,15 +412,24 @@
   // Inicialização
   function init(){
     // recuperar estado local
-    const saved = localStorage.getItem('simulado_estado_v1');
+    const saved = localStorage.getItem('simulado_contabil_v1');
     if(saved){
-      try{estado = JSON.parse(saved);}catch(e){}
+      try{
+        const parsedState = JSON.parse(saved);
+        // Garante que o estado salvo é compatível com o número atual de questões
+        if(parsedState.respostas.length === questoes.length){
+            estado = parsedState;
+        }
+      }catch(e){
+        console.error("Erro ao carregar estado salvo:", e);
+      }
     }
     renderQuestion();
     updateControls();
+    updateProgressUI();
   }
 
-  function saveState(){localStorage.setItem('simulado_estado_v1', JSON.stringify(estado));}
+  function saveState(){localStorage.setItem('simulado_contabil_v1', JSON.stringify(estado));}
 
   function renderQuestion(){
     const q = questoes[estado.index];
@@ -199,12 +468,11 @@
     nextBtn.disabled = estado.index === questoes.length-1;
   }
 
-  prevBtn.addEventListener('click', ()=>{ if(estado.index>0){estado.index--; renderQuestion(); updateControls();}});
-  nextBtn.addEventListener('click', ()=>{ if(estado.index<questoes.length-1){estado.index++; renderQuestion(); updateControls();}});
-  resetBtn.addEventListener('click', ()=>{ if(confirm('Reiniciar respostas e progresso?')){estado = {index:0,respostas:Array(questoes.length).fill(null)}; saveState(); renderQuestion(); updateControls(); updateProgressUI(); summaryEl.style.display='none';}});
+  prevBtn.addEventListener('click', ()=>{ if(estado.index>0){estado.index--; saveState(); renderQuestion(); updateControls();}});
+  nextBtn.addEventListener('click', ()=>{ if(estado.index<questoes.length-1){estado.index++; saveState(); renderQuestion(); updateControls();}});
+  resetBtn.addEventListener('click', ()=>{ if(confirm('Reiniciar respostas e progresso?')){estado = {index:0,respostas:Array(questoes.length).fill(null)}; saveState(); location.reload();}});
 
   submitBtn.addEventListener('click', ()=>{
-    // checar se há respostas em branco
     const naoRespondidas = estado.respostas.filter(r=>r===null).length;
     if(naoRespondidas>0){
       if(!confirm(`Você deixou ${naoRespondidas} questão(ões) em branco. Deseja enviar mesmo assim?`)) return;
@@ -216,30 +484,25 @@
     const total = questoes.length;
     let corretas = 0;
     const errosPorCategoria = {};
-    const acertosPorCategoria = {};
     const detalhes = [];
 
     questoes.forEach((q,i)=>{
       const resp = estado.respostas[i];
       const isCorrect = resp === q.correta;
       if(isCorrect) corretas++;
-      // contar por categoria
-      if(isCorrect) acertosPorCategoria[q.categoria] = (acertosPorCategoria[q.categoria]||0)+1;
       else errosPorCategoria[q.categoria] = (errosPorCategoria[q.categoria]||0)+1;
 
       detalhes.push({q,resp,isCorrect});
     });
 
-    // montar insights
     const insights = [];
-    if(corretas===total) insights.push('Ótimo! Respondeu todas corretamente — manter revisão leve.');
-    else if(corretas/total >= 0.6) insights.push('Bom desempenho, foque nas categorias onde errou.');
-    else insights.push('Desempenho abaixo do esperado — revisar conceitos básicos das categorias indicadas.');
-
-    // recomendações por categoria
+    if(corretas===total) insights.push('Excelente! Desempenho impecável. Continue com revisões pontuais.');
+    else if(corretas/total >= 0.7) insights.push('Ótimo desempenho! Foque em revisar os detalhes das categorias onde errou.');
+    else if(corretas/total >= 0.5) insights.push('Bom desempenho, mas há espaço para melhoria. Revise os conceitos básicos dos pontos fracos.');
+    else insights.push('Atenção! Desempenho abaixo do esperado. É crucial reforçar o estudo teórico das categorias com erros.');
+    
     const weaknesses = Object.keys(errosPorCategoria).map(cat=>({categoria:cat, erros:errosPorCategoria[cat], recomendacao: recomendacaoPorCategoria(cat)}));
 
-    // mostra resultados
     summaryEl.style.display='grid';
     const pct = Math.round((estado.respostas.filter(r=>r!==null).length/total)*100);
     progressBar.style.width = pct + '%';
@@ -247,44 +510,52 @@
     correctText.textContent = `${corretas} corretas`;
     insightsList.innerHTML = insights.map(i=>`<div>• ${escapeHtml(i)}</div>`).join('');
     scoreEl.textContent = `${corretas} / ${total}`;
-    if(weaknesses.length===0){ weaknessesEl.innerHTML = '<div style="color:var(--success)">Nenhuma fraqueza identificada — revise os pontos de atenção.</div>'; }
+    if(weaknesses.length===0){ weaknessesEl.innerHTML = '<div style="color:var(--success)">Nenhuma fraqueza identificada. Parabéns!</div>'; }
     else{
       weaknessesEl.innerHTML = weaknesses.map(w=>`<div style="margin-bottom:8px"><strong>${escapeHtml(w.categoria)}</strong> — Erros: ${w.erros}<div style="color:var(--muted);font-size:13px;margin-top:4px">${escapeHtml(w.recomendacao)}</div></div>`).join('');
     }
 
-    // mostrar feedback detalhado por questão
     const detalhesHtml = detalhes.map((d,idx)=>{
       const status = d.isCorrect ? '✔ Correta' : '✖ Incorreta';
+      const statusColor = d.isCorrect ? 'var(--success)' : 'var(--danger)';
+      let suaRespostaHtml = '<em>Sem resposta</em>';
+      if(d.resp !== null) {
+        suaRespostaHtml = `${String.fromCharCode(65+d.resp)}) ${escapeHtml(questoes[idx].alternativas[d.resp])}`;
+      }
+
       return `
         <div style="margin-top:12px;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);">
           <div style="font-weight:600">Q${questoes[idx].id} — ${questoes[idx].categoria} <small style='color:var(--muted)'>(${questoes[idx].nivel})</small></div>
           <div style="margin-top:6px">${escapeHtml(questoes[idx].enunciado)}</div>
-          <div style="margin-top:8px;color:${d.isCorrect? 'var(--success)':'var(--danger)'}">${status}</div>
-          <div style="margin-top:6px;color:var(--muted);font-size:13px">Resposta correta: ${String.fromCharCode(65+questoes[idx].correta)} — ${escapeHtml(questoes[idx].alternativas[questoes[idx].correta])}</div>
-          <div style="margin-top:6px;color:var(--muted);font-size:13px">Sua resposta: ${d.resp===null? '<em>Sem resposta</em>' : String.fromCharCode(65+d.resp) + ' — ' + escapeHtml(questoes[idx].alternativas[d.resp])}</div>
-          <div style="margin-top:8px;color:var(--muted);font-size:13px">Explicação: ${escapeHtml(questoes[idx].explicacao)}</div>
+          <div style="margin-top:8px;color:${statusColor}">${status}</div>
+          <div style="margin-top:6px;color:var(--muted);font-size:13px">Sua resposta: ${suaRespostaHtml}</div>
+          <div style="margin-top:6px;color:var(--muted);font-size:13px">Gabarito: ${String.fromCharCode(65+questoes[idx].correta)}) ${escapeHtml(questoes[idx].alternativas[questoes[idx].correta])}</div>
+          <div style="margin-top:8px;padding:8px; border-left: 2px solid var(--accent); color:var(--muted);font-size:13px"><b>Explicação:</b> ${escapeHtml(questoes[idx].explicacao)}</div>
         </div>
       `;
     }).join('');
 
-    // inserir abaixo do resumo
+    const existing = document.getElementById('detContainer');
+    if(existing) existing.remove();
+    
     const detailsContainer = document.createElement('div');
     detailsContainer.className='card';
     detailsContainer.style.marginTop='12px';
-    detailsContainer.innerHTML = `<h3>Detalhamento das questões</h3>${detalhesHtml}`;
-    // limpar antigos
-    const existing = document.getElementById('detContainer');
-    if(existing) existing.remove();
     detailsContainer.id = 'detContainer';
+    detailsContainer.innerHTML = `<h3>Detalhamento das questões</h3>${detalhesHtml}`;
     document.getElementById('app').appendChild(detailsContainer);
 
-    // salvar relatório rápido
-    const relatorio = {data:new Date().toISOString(), total, corretas, errosPorCategoria, acertosPorCategoria, respostas:estado.respostas};
-    localStorage.setItem('simulado_relatorio_v1', JSON.stringify(relatorio));
+    // Esconde os botões de controle e mostra apenas o de reiniciar
+    prevBtn.style.display = 'none';
+    nextBtn.style.display = 'none';
+    submitBtn.style.display = 'none';
+    resetBtn.style.marginLeft = 'auto'; // Move o reiniciar para a direita
   }
 
   function recomendacaoPorCategoria(cat){
     const dicas = {
+      'Contabilidade - CPC 16': 'Revisar a regra de mensuração "custo ou valor realizável líquido, dos dois o menor". Foque nos itens que compõem o custo de aquisição e de transformação e nos custos que devem ser tratados como despesa. Pratique cálculos de perda por desvalorização.',
+      'Contabilidade - CPC 14': 'Focar nos critérios de classificação de ativos financeiros (Custo Amortizado, VJORA e VJR), especialmente no teste do modelo de negócios e no teste de fluxos de caixa (SPPJ). Estude o tratamento de custos de transação e o conceito de perda de crédito esperada.',
       'Direito Constitucional': 'Revisar os conceitos de direitos e garantias fundamentais, estudo de casos e interpretação constitucional. Consulte resumos, esquemas e resolução de questões comentadas para fixar.' ,
       'Administração Pública': 'Foque no princípio da legalidade, poderes e deveres da administração, e diferenciação entre atos administrativos e atos judiciais. Faça exercícios práticos com análise de enunciados.' ,
       'Língua Portuguesa': 'Reforce concordância verbal e nominal, análise sintática e leitura interpretativa. Pratique com exercícios de gramática contextualizados.'
@@ -295,17 +566,16 @@
   function updateProgressUI(){
     const total = questoes.length;
     const filled = estado.respostas.filter(r=>r!==null).length;
-    const pct = Math.round((filled/total)*100);
-    progressBar.style.width = pct + '%';
-    progressText.textContent = `${filled} / ${total} respondidas`;
-    correctText.textContent = `-`;
+    const pct = filled > 0 ? Math.round((filled/total)*100) : 0;
+    if (progressBar) progressBar.style.width = pct + '%';
+    if (progressText) progressText.textContent = `${filled} / ${total} respondidas`;
+    if (correctText) correctText.textContent = `-`;
   }
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m]}); }
 
   // start
   init();
-  updateProgressUI();
   </script>
 </body>
 </html>
