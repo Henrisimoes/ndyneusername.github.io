@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Simulado Contabilidade (CPC 14 e 16) — Feedback Inteligente</title>
+  <title>Simulado Contabilidade (CPC 16, 25 e PECLD) — Feedback Inteligente</title>
   <style>
     :root{--bg:#0f1724;--card:#0b1220;--accent:#06b6d4;--success:#10b981;--danger:#ef4444;--muted:#94a3b8}
     *{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif}
-    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071128 0%, #071a2a 100%);color:#e6eef6}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,#071128 0%, #071a2a 100%);color:#e6efF6}
     .wrap{max-width:920px;margin:40px auto;padding:24px}
     header{display:flex;align-items:center;gap:16px}
     header h1{margin:0;font-size:20px}
@@ -35,7 +35,7 @@
     <header>
       <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='42' height='42'><rect rx='8' width='42' height='42' fill='%2306b6d4'/></svg>" alt="logo" style="width:42px;height:42px;border-radius:8px">
       <div>
-        <h1>Simulado Contabilidade — CPC 14 e CPC 16 (Estilo FGV)</h1>
+        <h1>Simulado Contabilidade — VRL, PECLD e Provisões (Estilo FGV)</h1>
         <div style="color:var(--muted);font-size:13px">20 questões — feedback por disciplina e dicas de estudo</div>
       </div>
     </header>
@@ -77,7 +77,6 @@
           </div>
         </div>
       </div>
-
     </section>
 
     <footer>
@@ -86,309 +85,310 @@
   </div>
 
   <script>
-  // QUESTÕES: adaptadas de concursos da banca FGV sobre CPC 14 e CPC 16.
+  // QUESTÕES: adaptadas de concursos da banca FGV.
   const questoes = [
-    // CPC 16 - Estoques
+    // CPC 16 (VRL) - 7 Questões
     {
       id: 1,
-      categoria: 'Contabilidade - CPC 16',
-      nivel: 'Médio',
-      enunciado: 'De acordo com o CPC 16, os estoques devem ser mensurados pelo valor de custo ou pelo valor realizável líquido, dos dois o menor. O que representa o Valor Realizável Líquido?',
+      categoria: 'Contabilidade - CPC 16 (VRL)',
+      nivel: 'Fácil',
+      enunciado: 'De acordo com o CPC 16 (R1), o Valor Realizável Líquido (VRL) é definido como:',
       alternativas: [
-        'O preço de venda estimado no curso normal dos negócios deduzido dos custos estimados para sua produção.',
-        'O preço de venda estimado no curso normal dos negócios, deduzido dos custos estimados para sua conclusão e dos gastos estimados necessários para se concretizar a venda.',
-        'O valor de mercado do item em uma data específica, sem quaisquer deduções.',
-        'O custo de reposição do estoque na data do balanço.',
-        'O valor presente dos fluxos de caixa futuros esperados do item.'
+        'O preço de compra de um item de estoque no mercado.',
+        'O preço de venda estimado no curso normal dos negócios, deduzido das despesas de venda.',
+        'O preço de venda estimado, deduzido dos custos estimados para sua conclusão e dos gastos necessários para concretizar a venda.',
+        'O valor justo do estoque menos os custos de vendê-lo.',
+        'O custo histórico do estoque ajustado pela inflação do período.'
       ],
-      correta: 1,
-      explicacao: 'O Valor Realizável Líquido é o preço de venda estimado menos os custos para concluir a produção e os gastos para vender (ex: comissões, fretes). Esta é a definição exata do CPC 16.'
+      correta: 2,
+      explicacao: 'A definição correta e completa do VRL é o preço de venda estimado menos os custos para finalizar a produção (se houver) e os gastos para vender (comissões, fretes, marketing etc.).'
     },
     {
       id: 2,
-      categoria: 'Contabilidade - CPC 16',
+      categoria: 'Contabilidade - CPC 16 (VRL)',
       nivel: 'Médio',
-      enunciado: 'Uma empresa industrial incorreu nos seguintes gastos na produção de um item: matéria-prima R$100, mão de obra direta R$50, e custos indiretos de fabricação fixos de R$30. Além disso, teve R$10 de despesas de vendas. Qual é o custo do estoque a ser reconhecido?',
+      enunciado: 'Uma empresa possui um produto em estoque com custo de R$ 500. O preço de venda estimado é de R$ 600. Para vender o produto, a empresa incorrerá em comissões de R$ 30 e frete de R$ 20. Qual valor deve ser registrado para este item no balanço?',
       alternativas: [
-        'R$ 150',
-        'R$ 160',
-        'R$ 180',
-        'R$ 190',
-        'R$ 100'
+        'R$ 600',
+        'R$ 550',
+        'R$ 500',
+        'R$ 530',
+        'R$ 450'
       ],
       correta: 2,
-      explicacao: 'O custo do estoque inclui todos os custos de aquisição e transformação. Portanto, soma-se a matéria-prima (100), a mão de obra direta (50) e os CIF (30), totalizando R$ 180. Despesas de vendas não compõem o custo do estoque.'
+      explicacao: 'O VRL é R$ 600 (preço de venda) - R$ 30 (comissão) - R$ 20 (frete) = R$ 550. Compara-se o Custo (R$ 500) com o VRL (R$ 550). O estoque deve ser mensurado pelo menor dos dois, que neste caso é o Custo de R$ 500.'
     },
     {
       id: 3,
-      categoria: 'Contabilidade - CPC 16',
-      nivel: 'Fácil',
-      enunciado: 'Qual dos seguintes itens NÃO deve ser incluído no custo dos estoques de uma indústria?',
+      categoria: 'Contabilidade - CPC 16 (VRL)',
+      nivel: 'Médio',
+      enunciado: 'Considere o mesmo cenário da questão anterior, mas agora o preço de venda estimado caiu para R$ 540. Qual ajuste a empresa deve fazer em seu resultado?',
       alternativas: [
-        'Custo de transporte da matéria-prima até a fábrica.',
-        'Salário do supervisor da linha de produção.',
-        'Depreciação das máquinas da fábrica.',
-        'Valor anormal de desperdício de materiais.',
-        'Mão de obra direta aplicada ao produto.'
+        'Nenhum ajuste, pois o preço de venda ainda é maior que o custo.',
+        'Reconhecer uma perda de R$ 10 no resultado do período.',
+        'Reconhecer um ganho de R$ 40.',
+        'Reconhecer uma perda de R$ 50.',
+        'Aguardar a venda para realizar qualquer ajuste.'
       ],
-      correta: 3,
-      explicacao: 'Desperdícios anormais de materiais, mão de obra ou outros insumos de produção devem ser reconhecidos como despesa no período em que ocorrem e não são incluídos no custo do estoque (CPC 16, item 16).'
+      correta: 1,
+      explicacao: 'O novo VRL é R$ 540 (preço de venda) - R$ 30 (comissão) - R$ 20 (frete) = R$ 490. Compara-se o Custo (R$ 500) com o VRL (R$ 490). O estoque deve ser ajustado para o menor valor (R$ 490), reconhecendo uma perda por desvalorização de R$ 10 (R$ 500 - R$ 490).'
     },
-    {
+     {
       id: 4,
-      categoria: 'Contabilidade - CPC 16',
+      categoria: 'Contabilidade - CPC 16 (VRL)',
       nivel: 'Difícil',
-      enunciado: 'Uma empresa comercial adquiriu mercadorias por R$ 50.000, pagando R$ 2.000 de frete e R$ 1.000 de seguro para o transporte. Obteve um desconto comercial de R$ 5.000 no momento da compra. Qual o valor a ser registrado no estoque?',
+      enunciado: 'A regra de mensuração dos estoques pelo "custo ou valor realizável líquido, dos dois o menor" deve ser aplicada:',
       alternativas: [
-        'R$ 50.000',
-        'R$ 45.000',
-        'R$ 53.000',
-        'R$ 48.000',
-        'R$ 58.000'
+        'Ao estoque total da empresa, de forma agregada.',
+        'Item a item, individualmente.',
+        'Por grupos de itens similares ou relacionados.',
+        'Item a item, ou por grupos de itens similares, mas não de forma agregada.',
+        'Apenas para produtos acabados.'
       ],
       correta: 3,
-      explicacao: 'O custo de aquisição inclui o preço de compra, impostos não recuperáveis, frete e seguro, deduzido de descontos comerciais. Cálculo: (50.000 - 5.000 de desconto) + 2.000 de frete + 1.000 de seguro = R$ 48.000.'
+      explicacao: 'O CPC 16 orienta que a comparação deve ser feita item a item. No entanto, permite-se o agrupamento de itens similares ou relacionados (ex: uma mesma linha de produtos), mas proíbe a avaliação com base no estoque total ou por classes muito amplas.'
     },
     {
       id: 5,
-      categoria: 'Contabilidade - CPC 16',
+      categoria: 'Contabilidade - CPC 16 (VRL)',
       nivel: 'Médio',
-      enunciado: 'Em 31/12, uma empresa possuía um item em estoque com custo de R$ 1.000. Seu preço de venda estimado era de R$ 1.200, e os gastos para vender eram de R$ 250. Qual ajuste a empresa deve fazer?',
+      enunciado: 'Qual das seguintes situações NÃO levaria a uma redução do valor do estoque para o VRL?',
       alternativas: [
-        'Nenhum ajuste, pois o preço de venda é maior que o custo.',
-        'Reconhecer uma perda de R$ 50.',
-        'Reconhecer um ganho de R$ 200.',
-        'Reconhecer uma perda de R$ 250.',
-        'Reconhecer uma perda de R$ 1.000.'
+        'Um aumento significativo nos custos para finalizar a produção do item.',
+        'Danos físicos sofridos por parte do estoque.',
+        'Obsolescência tecnológica do produto.',
+        'Aumento inesperado no preço de venda do produto.',
+        'Queda acentuada na demanda do mercado pelo produto.'
       ],
-      correta: 1,
-      explicacao: 'O estoque é mensurado pelo menor valor entre o custo (R$ 1.000) e o valor realizável líquido. O VRL é Preço de Venda (1.200) - Gastos para Vender (250) = R$ 950. Como o VRL (950) é menor que o custo (1.000), a empresa deve reconhecer uma perda por desvalorização de R$ 50.'
+      correta: 3,
+      explicacao: 'Um aumento no preço de venda tende a aumentar o VRL. As outras opções (aumento de custo, danos, obsolescência e queda na demanda) são todos fatores que podem fazer com que o VRL se torne inferior ao custo, exigindo um ajuste de perda.'
     },
     {
       id: 6,
-      categoria: 'Contabilidade - CPC 16',
-      nivel: 'Fácil',
-      enunciado: 'Assinale a alternativa que apresenta um método de custeio de estoque NÃO permitido pelo CPC 16.',
+      categoria: 'Contabilidade - CPC 16 (VRL)',
+      nivel: 'Difícil',
+      enunciado: 'Uma empresa reconheceu uma perda por desvalorização de estoque de R$ 2.000 no ano X1. Em X2, as condições de mercado melhoraram. A reversão da perda:',
       alternativas: [
-        'Primeiro que Entra, Primeiro que Sai (PEPS).',
-        'Custo Médio Ponderado.',
-        'Custo Específico.',
-        'Último que Entra, Primeiro que Sai (UEPS).',
-        'Todos os métodos citados são permitidos.'
+        'Não é permitida em nenhuma hipótese.',
+        'É permitida e deve ser reconhecida diretamente no Patrimônio Líquido.',
+        'É permitida, limitada ao valor da perda original, e afeta o Custo do Produto Vendido (CPV).',
+        'É permitida sem qualquer limite de valor.',
+        'É permitida, mas reconhecida como "Outras Receitas Operacionais".'
       ],
-      correta: 3,
-      explicacao: 'O CPC 16 permite o uso dos métodos PEPS (ou FIFO), Custo Médio Ponderado e Custo Específico. O método UEPS (ou LIFO) não é permitido pelas normas contábeis brasileiras (CPC) nem pelas internacionais (IFRS).'
+      correta: 2,
+      explicacao: 'O CPC 16 permite a reversão de perdas. A reversão é limitada ao valor da perda original e é reconhecida como uma redução no CPV do período em que ocorre, melhorando o resultado.'
     },
     {
       id: 7,
-      categoria: 'Contabilidade - CPC 16',
+      categoria: 'Contabilidade - CPC 16 (VRL)',
       nivel: 'Médio',
-      enunciado: 'Os custos de armazenagem são geralmente incluídos no custo do estoque?',
+      enunciado: 'Para matérias-primas que serão utilizadas na produção, o teste do VRL é aplicado de que forma?',
       alternativas: [
-        'Sim, sempre e sem exceção.',
-        'Não, são sempre reconhecidos como despesa do período.',
-        'Apenas se forem necessários no processo produtivo antes de uma nova fase de produção.',
-        'Apenas para produtos importados durante o desembaraço aduaneiro.',
-        'Sim, mas apenas para produtos acabados.'
+        'Elas nunca são testadas, pois não são para venda.',
+        'O VRL da matéria-prima é sempre o seu custo de reposição.',
+        'A matéria-prima só é ajustada se o produto acabado no qual será incorporada for vendido com prejuízo.',
+        'O VRL é calculado com base em seu preço de venda no mercado de commodities.',
+        'Aplica-se a mesma regra dos produtos acabados, sem exceções.'
       ],
       correta: 2,
-      explicacao: 'O CPC 16 (item 16, c) estabelece que os custos de armazenagem devem ser reconhecidos como despesa, a menos que sejam necessários para o processo produtivo, como por exemplo a maturação de queijos ou vinhos. A armazenagem de produto acabado é despesa.'
+      explicacao: 'A matéria-prima não é ajustada ao VRL se o produto acabado em que ela será usada for vendido por um preço igual ou superior ao seu custo. A necessidade de ajuste só surge se o produto final tiver um VRL inferior ao seu próprio custo.'
     },
+    // PECLD - 7 Questões
     {
       id: 8,
-      categoria: 'Contabilidade - CPC 16',
-      nivel: 'Difícil',
-      enunciado: 'Uma empresa reverteu uma perda por desvalorização do estoque que havia sido reconhecida em período anterior. Como essa reversão deve ser tratada?',
+      categoria: 'Contabilidade - PECLD',
+      nivel: 'Fácil',
+      enunciado: 'O modelo de Perdas Esperadas em Créditos de Liquidação Duvidosa (PECLD) representa uma mudança em relação ao modelo anterior, de perdas incorridas. A principal característica do modelo de perdas esperadas é ser:',
       alternativas: [
-        'Como um ajuste direto no Patrimônio Líquido.',
-        'Como uma receita não operacional no resultado.',
-        'Como uma redução no valor do custo dos produtos vendidos (CPV) do período.',
-        'Como um ganho em Outros Resultados Abrangentes (ORA).',
-        'A reversão de perda de estoque não é permitida.'
+        'Reativo, reconhecendo a perda apenas após a inadimplência.',
+        'Conservador, sempre provisionando 100% das contas a receber.',
+        'Prospectivo, exigindo uma análise de informações futuras para estimar perdas.',
+        'Opcional para a maioria das empresas.',
+        'Baseado exclusivamente no histórico de perdas da empresa.'
       ],
       correta: 2,
-      explicacao: 'A reversão de uma perda por desvalorização de estoque é reconhecida como uma redução do CPV no período em que a reversão ocorre. O valor da reversão é limitado ao montante da perda originalmente reconhecida.'
+      explicacao: 'A grande mudança do modelo de perdas esperadas (Expected Credit Losses - ECL) é sua natureza prospectiva (forward-looking), que exige que as entidades considerem não só o passado, mas também as condições atuais e as previsões futuras para estimar as perdas.'
     },
-     {
+    {
       id: 9,
-      categoria: 'Contabilidade - CPC 16',
+      categoria: 'Contabilidade - PECLD',
       nivel: 'Médio',
-      enunciado: 'De acordo com o CPC 16, os juros sobre empréstimos para financiar a aquisição de estoques em grande quantidade (compra de oportunidade) devem ser:',
+      enunciado: 'Uma empresa possui um saldo de Contas a Receber de R$ 200.000. Com base em sua matriz de provisionamento, que considera o histórico e as condições econômicas futuras, ela estima uma perda de 5% sobre esse saldo. Qual o lançamento contábil para registrar a PECLD?',
       alternativas: [
-        'Capitalizados ao custo do estoque.',
-        'Reconhecidos como despesa financeira no resultado do período.',
-        'Registrados como um ativo intangível.',
-        'Amortizados ao longo da vida útil do estoque.',
-        'Registrados como ajuste de avaliação patrimonial.'
+        'D - Caixa R$ 10.000 / C - Contas a Receber R$ 10.000',
+        'D - Despesa com PECLD R$ 10.000 / C - Contas a Receber R$ 10.000',
+        'D - Contas a Receber R$ 10.000 / C - Receita Financeira R$ 10.000',
+        'D - Despesa com PECLD R$ 10.000 / C - PECLD (conta retificadora) R$ 10.000',
+        'D - PECLD (conta retificadora) R$ 10.000 / C - Despesa com PECLD R$ 10.000'
       ],
-      correta: 1,
-      explicacao: 'Regra geral, os custos de financiamento são despesas. No entanto, o CPC 07 (e indiretamente o CPC 16) permite a capitalização de juros para ativos que demandam um longo período de tempo para ficarem prontos (ativos qualificáveis), o que normalmente não é o caso de estoques. Assim, são reconhecidos como despesa financeira.'
+      correta: 3,
+      explicacao: 'A despesa com a perda estimada é reconhecida no resultado. A contrapartida é uma conta retificadora do ativo (PECLD), que reduz o saldo de Contas a Receber ao seu valor realizável líquido. O cálculo da perda é R$ 200.000 * 5% = R$ 10.000.'
     },
     {
       id: 10,
-      categoria: 'Contabilidade - CPC 16',
-      nivel: 'Fácil',
-      enunciado: 'A principal diretriz do CPC 16 para a mensuração de estoques é:',
-      alternativas: [
-        'Mensurar sempre pelo valor justo.',
-        'Mensurar sempre pelo custo histórico.',
-        'Mensurar pelo valor de custo ou valor realizável líquido, o que for maior.',
-        'Nunca permitir o reconhecimento de perdas antes da venda.',
-        'Evitar que o estoque seja registrado por um valor superior àquele que se espera realizar com sua venda ou uso.'
-      ],
-      correta: 4,
-      explicacao: 'O princípio fundamental do CPC 16 é que os estoques não devem ser registrados por um valor maior do que o que se espera recuperar com eles. Por isso a regra: mensurar pelo custo ou valor realizável líquido, dos dois, o menor.'
-    },
-    // CPC 14 - Instrumentos Financeiros
-    {
-      id: 11,
-      categoria: 'Contabilidade - CPC 14',
+      categoria: 'Contabilidade - PECLD',
       nivel: 'Médio',
-      enunciado: 'Conforme o CPC 14 (R1), um ativo financeiro deve ser mensurado ao Custo Amortizado se duas condições forem atendidas. Quais são elas?',
+      enunciado: 'No início do ano, uma empresa tinha um saldo de R$ 5.000 em sua conta de PECLD. Durante o ano, registrou R$ 8.000 de novas estimativas de perdas e deu baixa em R$ 3.000 de duplicatas consideradas incobráveis. Qual o saldo final da conta PECLD?',
       alternativas: [
-        'O ativo é mantido para ser negociado no curto prazo e seus fluxos de caixa são pagamentos de juros.',
-        'O modelo de negócios é receber fluxos de caixa contratuais e os fluxos de caixa contratuais são somente pagamentos de principal e juros.',
-        'O ativo é um instrumento de patrimônio e a empresa optou por reconhecer variações de valor justo no resultado.',
-        'O modelo de negócios é vender o ativo financeiro e seus fluxos de caixa são somente pagamentos de principal.',
-        'O ativo é derivativo e usado para hedge.'
+        'R$ 10.000',
+        'R$ 13.000',
+        'R$ 16.000',
+        'R$ 8.000',
+        'R$ 5.000'
       ],
-      correta: 1,
-      explicacao: 'Para ser classificado como Custo Amortizado, o ativo financeiro precisa passar em dois testes: 1) Teste do Modelo de Negócios (objetivo é manter para receber os fluxos de caixa) e 2) Teste das Características dos Fluxos de Caixa Contratuais (fluxos são "Somente Pagamentos de Principal e Juros" - SPPJ).'
+      correta: 0,
+      explicacao: 'O saldo final é calculado como: Saldo Inicial + Novas Provisões - Baixas por Inadimplência. Cálculo: R$ 5.000 + R$ 8.000 - R$ 3.000 = R$ 10.000. A baixa de uma duplicata utiliza o saldo já provisionado.'
+    },
+     {
+      id: 11,
+      categoria: 'Contabilidade - PECLD',
+      nivel: 'Difícil',
+      enunciado: 'De acordo com a abordagem simplificada permitida para contas a receber comerciais, a perda esperada é geralmente medida com base em:',
+      alternativas: [
+        'Uma análise individual de cada cliente, obrigatoriamente.',
+        'Perdas esperadas para os próximos 12 meses.',
+        'Perdas esperadas durante toda a vida do ativo financeiro.',
+        'Uma taxa fixa de 1% sobre o faturamento, definida pela legislação fiscal.',
+        'Apenas quando o risco de crédito aumenta significativamente.'
+      ],
+      correta: 2,
+      explicacao: 'A abordagem simplificada, comumente aplicada a contas a receber de clientes, permite (e muitas vezes exige) que a empresa meça a perda esperada com base na vida inteira (lifetime ECL) do ativo, geralmente usando uma matriz de provisionamento por faixa de vencimento.'
     },
     {
       id: 12,
-      categoria: 'Contabilidade - CPC 14',
-      nivel: 'Difícil',
-      enunciado: 'Uma empresa investiu em ações de outra companhia com o objetivo de vendê-las no curto prazo para obter lucro com a flutuação de preços. Como este ativo financeiro deve ser classificado e mensurado?',
+      categoria: 'Contabilidade - PECLD',
+      nivel: 'Médio',
+      enunciado: 'A reversão de uma PECLD anteriormente constituída ocorre quando:',
       alternativas: [
-        'Ao Custo Amortizado.',
-        'Ao Valor Justo por meio de Outros Resultados Abrangentes (VJORA).',
-        'Ao Valor Justo por meio do Resultado (VJR).',
-        'Pelo método de equivalência patrimonial.',
-        'Como um investimento em coligada.'
+        'A empresa decide mudar seu método de cálculo.',
+        'O cliente efetivamente não paga a dívida.',
+        'A estimativa de perda diminui devido à melhora nas condições de crédito ou pagamento do cliente.',
+        'A reversão de PECLD não é permitida.',
+        'Ocorre o encerramento do exercício social.'
       ],
       correta: 2,
-      explicacao: 'Ativos financeiros mantidos com o propósito de negociação (venda no curto prazo) são, por definição, classificados como Mensurados ao Valor Justo por meio do Resultado (VJR). As variações no seu valor justo afetam diretamente o resultado do período.'
+      explicacao: 'Se a estimativa de perda futura diminuir (por exemplo, a economia melhora ou o cliente renegocia a dívida), o valor provisionado em excesso deve ser revertido, sendo reconhecido como uma receita (reversão de despesa) no resultado.'
     },
-    {
+     {
       id: 13,
-      categoria: 'Contabilidade - CPC 14',
-      nivel: 'Médio',
-      enunciado: 'O que significa o termo "perda de crédito esperada" no contexto do CPC 14?',
+      categoria: 'Contabilidade - PECLD',
+      nivel: 'Difícil',
+      enunciado: 'O modelo de impairment do IFRS 9 (CPC 48) possui 3 estágios. Um ativo financeiro é movido do Estágio 1 para o Estágio 2 quando:',
       alternativas: [
-        'Uma perda que já ocorreu e foi confirmada com a inadimplência do devedor.',
-        'A estimativa de perdas futuras com base em eventos passados, condições atuais e previsões de condições econômicas futuras.',
-        'Apenas a perda que se espera ocorrer nos próximos 12 meses.',
-        'A perda máxima possível em um instrumento financeiro.',
-        'Uma provisão genérica para todas as contas a receber, sem análise individual.'
+        'O ativo é originado ou adquirido.',
+        'Ocorre um aumento significativo no risco de crédito desde o reconhecimento inicial.',
+        'Há evidência objetiva de perda (inadimplência).',
+        'O ativo é liquidado.',
+        'O valor justo do ativo aumenta.'
       ],
       correta: 1,
-      explicacao: 'O modelo de "perda esperada" do CPC 14 é proativo. Ele exige o reconhecimento de uma provisão para perdas de crédito (impairment) com base não apenas em eventos passados, mas também em informações futuras e prospectivas.'
+      explicacao: 'No Estágio 1, a perda esperada é calculada para 12 meses. Quando há um aumento significativo no risco de crédito (mas ainda não há inadimplência), o ativo move-se para o Estágio 2, e a perda esperada passa a ser calculada para a vida inteira do ativo.'
     },
     {
       id: 14,
-      categoria: 'Contabilidade - CPC 14',
-      nivel: 'Difícil',
-      enunciado: 'Uma empresa adquire títulos de dívida com o modelo de negócios de "manter para receber fluxos de caixa contratuais E vender". Os fluxos de caixa são SPPJ. Qual a classificação correta?',
+      categoria: 'Contabilidade - PECLD',
+      nivel: 'Fácil',
+      enunciado: 'Qual o principal objetivo da constituição da PECLD?',
       alternativas: [
-        'Custo Amortizado.',
-        'Valor Justo por meio do Resultado (VJR).',
-        'Valor Justo por meio de Outros Resultados Abrangentes (VJORA).',
-        'Custo, menos impairment.',
-        'Depende da intenção da gestão a cada período.'
+        'Reduzir o lucro da empresa para pagar menos impostos.',
+        'Apresentar o saldo de Contas a Receber pelo seu valor de custo.',
+        'Ajustar o saldo de Contas a Receber ao valor que a empresa efetivamente espera receber.',
+        'Aumentar o endividamento da companhia.',
+        'Registrar uma despesa apenas quando o cliente se torna insolvente.'
       ],
       correta: 2,
-      explicacao: 'O modelo de negócios híbrido de "manter para receber E vender" (hold to collect and sell) leva à classificação de Valor Justo por meio de Outros Resultados Abrangentes (VJORA). As variações do valor justo vão para o PL (ORA), e os juros e impairment para o resultado.'
+      explicacao: 'O objetivo da PECLD é garantir que os ativos financeiros (como Contas a Receber) não estejam superavaliados no balanço, refletindo de forma mais fidedigna o montante que a empresa realisticamente espera converter em caixa.'
     },
+    // CPC 25 (Provisões) - 6 Questões
     {
       id: 15,
-      categoria: 'Contabilidade - CPC 14',
+      categoria: 'Contabilidade - CPC 25 (Provisões)',
       nivel: 'Fácil',
-      enunciado: 'Qual dos seguintes itens é um exemplo de instrumento financeiro?',
+      enunciado: 'De acordo com o CPC 25, qual das seguintes condições NÃO é necessária para o reconhecimento de uma provisão?',
       alternativas: [
-        'Estoque de matéria-prima.',
-        'Imobilizado (máquinas).',
-        'Uma debênture emitida por outra empresa.',
-        'Despesa de aluguel paga antecipadamente.',
-        'Software desenvolvido internamente.'
+        'A empresa tem uma obrigação presente (legal ou não formalizada) como resultado de um evento passado.',
+        'É provável que uma saída de recursos seja necessária para liquidar a obrigação.',
+        'Uma estimativa confiável do valor da obrigação pode ser feita.',
+        'A saída de recursos para liquidar a obrigação é praticamente certa.',
+        'O evento que deu origem à obrigação já ocorreu.'
       ],
-      correta: 2,
-      explicacao: 'Um instrumento financeiro é um contrato que gera um ativo financeiro para uma entidade e um passivo financeiro ou instrumento de patrimônio para outra. Uma debênture é um título de dívida, sendo um ativo financeiro para quem a detém.'
+      correta: 3,
+      explicacao: 'Os três critérios para reconhecer uma provisão são: (1) obrigação presente de evento passado, (2) saída de recursos provável (mais provável que não), e (3) estimativa confiável. A certeza da saída de recursos não é exigida, apenas a probabilidade.'
     },
     {
       id: 16,
-      categoria: 'Contabilidade - CPC 14',
+      categoria: 'Contabilidade - CPC 25 (Provisões)',
       nivel: 'Médio',
-      enunciado: 'Os custos de transação (ex: taxas de corretagem) na aquisição de um ativo financeiro classificado como "Valor Justo por meio do Resultado" (VJR) devem ser:',
+      enunciado: 'Uma empresa está enfrentando um processo judicial. Seus advogados consideram a perda como "possível", mas não "provável". Como a empresa deve tratar essa situação em suas demonstrações contábeis?',
       alternativas: [
-        'Adicionados ao valor inicial do ativo financeiro.',
-        'Reconhecidos imediatamente como despesa no resultado.',
-        'Amortizados ao longo da vida do ativo financeiro.',
-        'Registrados em Outros Resultados Abrangentes (ORA).',
-        'Ignorados para fins contábeis.'
+        'Reconhecer uma provisão no passivo pelo valor estimado da perda.',
+        'Não fazer nada, pois a perda não é provável.',
+        'Reconhecer um ativo contingente.',
+        'Divulgar a existência de um passivo contingente em nota explicativa.',
+        'Registrar a despesa imediatamente no resultado.'
       ],
-      correta: 1,
-      explicacao: 'Para ativos financeiros VJR, os custos de transação são lançados diretamente como despesa. Para ativos classificados como Custo Amortizado ou VJORA, esses custos são capitalizados (somados) ao valor do ativo.'
+      correta: 3,
+      explicacao: 'Quando a saída de recursos é "possível" (e não "provável"), a obrigação não é provisionada no balanço. Em vez disso, ela deve ser divulgada como um passivo contingente nas notas explicativas, detalhando a natureza e a estimativa do efeito financeiro.'
     },
     {
       id: 17,
-      categoria: 'Contabilidade - CPC 14',
+      categoria: 'Contabilidade - CPC 25 (Provisões)',
       nivel: 'Difícil',
-      enunciado: 'O que é "Hedge Accounting" (Contabilidade de Hedge), conforme o CPC 14?',
+      enunciado: 'Qual a principal diferença entre uma provisão e um passivo de "contas a pagar"?',
       alternativas: [
-        'Uma estratégia para especular no mercado financeiro e maximizar lucros.',
-        'Uma designação contábil especial que permite que os ganhos e perdas do instrumento de hedge compensem os ganhos e perdas do item protegido no resultado.',
-        'A prática de avaliar todos os instrumentos financeiros pelo seu valor de custo.',
-        'A obrigação de reconhecer todas as perdas com derivativos imediatamente no resultado.',
-        'A separação de um derivativo embutido de seu contrato principal.'
+        'Provisões são sempre de longo prazo, enquanto contas a pagar são de curto prazo.',
+        'Não há diferença, os termos são intercambiáveis.',
+        'Contas a pagar se referem a obrigações de valor e prazo definidos, enquanto provisões têm incerteza quanto ao prazo ou ao valor.',
+        'Provisões são registradas no Patrimônio Líquido.',
+        'Contas a pagar não exigem saída de caixa.'
       ],
-      correta: 1,
-      explicacao: 'Hedge Accounting é um tratamento contábil opcional que visa demonstrar o efeito da gestão de riscos da empresa. Ele correlaciona o reconhecimento dos resultados do instrumento de hedge (que protege) com o do item protegido, evitando volatilidade artificial no resultado.'
+      correta: 2,
+      explicacao: 'A principal distinção é a incerteza. Um "contas a pagar" (ex: fornecedores) é um passivo com valor e vencimento conhecidos. Uma provisão é um passivo com incerteza sobre o valor exato ou a data de liquidação (ex: provisão para garantias).'
     },
     {
       id: 18,
-      categoria: 'Contabilidade - CPC 14',
+      categoria: 'Contabilidade - CPC 25 (Provisões)',
       nivel: 'Médio',
-      enunciado: 'Um passivo financeiro, como um empréstimo bancário, é tipicamente mensurado subsequentemente:',
+      enunciado: 'Uma empresa oferece garantia de um ano em seus produtos. Com base na experiência passada, a empresa estima que 2% das vendas gerarão custos com garantia. Se as vendas do ano foram de R$ 1.000.000, qual provisão deve ser constituída?',
       alternativas: [
-        'Pelo Valor Justo por meio do Resultado.',
-        'Pelo Custo Amortizado, usando o método dos juros efetivos.',
-        'Pelo valor do pagamento futuro, sem desconto.',
-        'Pelo maior valor entre o custo e o valor justo.',
-        'Pelo Valor Justo por meio de Outros Resultados Abrangentes.'
-      ],
-      correta: 1,
-      explicacao: 'A grande maioria dos passivos financeiros (empréstimos, financiamentos, títulos a pagar) é mensurada subsequentemente ao Custo Amortizado. Isso significa que os juros são reconhecidos ao longo do tempo pela taxa de juros efetiva.'
-    },
-    {
-      id: 19,
-      categoria: 'Contabilidade - CPC 14',
-      nivel: 'Fácil',
-      enunciado: 'O que significa "baixar" (derecognition) um ativo financeiro?',
-      alternativas: [
-        'Reconhecer uma perda por desvalorização (impairment).',
-        'Transferir o ativo para o imobilizado.',
-        'Remover o ativo financeiro do balanço patrimonial da entidade.',
-        'Alterar sua classificação de Custo Amortizado para Valor Justo.',
-        'Vender o ativo com direito de recompra.'
+        'Nenhuma, pois o custo ainda não ocorreu.',
+        'Uma provisão de R$ 1.000.000.',
+        'Uma provisão de R$ 20.000.',
+        'Um passivo contingente de R$ 20.000.',
+        'Aguardar os clientes reclamarem para registrar a despesa.'
       ],
       correta: 2,
-      explicacao: 'A baixa de um ativo financeiro ocorre quando a entidade perde o controle sobre os direitos contratuais aos fluxos de caixa do ativo, geralmente por meio de venda ou expiração desses direitos. O ativo é, então, removido do balanço.'
+      explicacao: 'A venda (evento passado) criou uma obrigação (de consertar produtos). A saída de recursos é provável e pode ser estimada confiavelmente. Portanto, uma provisão deve ser reconhecida. Valor = R$ 1.000.000 * 2% = R$ 20.000.'
+    },
+     {
+      id: 19,
+      categoria: 'Contabilidade - CPC 25 (Provisões)',
+      nivel: 'Difícil',
+      enunciado: 'Uma empresa tem uma ação judicial movida por um ex-funcionário. A perda é avaliada como provável, com uma estimativa de valor entre R$ 80.000 e R$ 120.000. Nenhum valor dentro desse intervalo é mais provável que outro. Qual valor a empresa deve provisionar?',
+      alternativas: [
+        'R$ 120.000, pelo princípio do conservadorismo.',
+        'R$ 80.000, o valor mínimo do intervalo.',
+        'R$ 100.000, o ponto médio do intervalo.',
+        'Nenhum, pois o valor exato não é conhecido.',
+        'Divulgar em nota explicativa, mas não provisionar.'
+      ],
+      correta: 2,
+      explicacao: 'Quando há um intervalo de valores igualmente prováveis, o CPC 25 orienta que a melhor estimativa seja o ponto médio desse intervalo. Portanto, (R$ 80.000 + R$ 120.000) / 2 = R$ 100.000. Se houvesse um valor mais provável, este seria o usado.'
     },
     {
       id: 20,
-      categoria: 'Contabilidade - CPC 14',
-      nivel: 'Difícil',
-      enunciado: 'Uma empresa emite um título de dívida que pode ser convertido em um número fixo de suas próprias ações (debênture conversível). De acordo com os CPCs, como este instrumento deve ser tratado pelo emissor?',
+      categoria: 'Contabilidade - CPC 25 (Provisões)',
+      nivel: 'Médio',
+      enunciado: 'Ativos contingentes devem ser:',
       alternativas: [
-        'Totalmente como um passivo financeiro.',
-        'Totalmente como um instrumento de patrimônio.',
-        'Como um instrumento híbrido, separando os componentes de passivo e de patrimônio.',
-        'Como uma receita diferida até a data da conversão.',
-        'Depende da probabilidade de conversão ser exercida.'
+        'Reconhecidos no balanço patrimonial se a entrada de benefícios for provável.',
+        'Reconhecidos no balanço apenas se a entrada de benefícios for praticamente certa.',
+        'Sempre ignorados nas demonstrações contábeis.',
+        'Divulgados em nota explicativa se a entrada de benefícios for provável.',
+        'Registrados como uma receita antecipada.'
       ],
-      correta: 2,
-      explicacao: 'Instrumentos compostos, como debêntures conversíveis, possuem componentes de passivo (a obrigação de pagar juros e principal) e de patrimônio (a opção de conversão). O emissor deve separar os dois componentes no reconhecimento inicial.'
+      correta: 3,
+      explicacao: 'Ativos contingentes não são reconhecidos no balanço para evitar o reconhecimento de receitas que talvez nunca se realizem. Eles devem ser apenas divulgados em nota explicativa quando a entrada de benefícios econômicos for provável (e não praticamente certa).'
     }
   ];
 
@@ -411,12 +411,10 @@
 
   // Inicialização
   function init(){
-    // recuperar estado local
-    const saved = localStorage.getItem('simulado_contabil_v1');
+    const saved = localStorage.getItem('simulado_contabil_v2');
     if(saved){
       try{
         const parsedState = JSON.parse(saved);
-        // Garante que o estado salvo é compatível com o número atual de questões
         if(parsedState.respostas.length === questoes.length){
             estado = parsedState;
         }
@@ -429,7 +427,7 @@
     updateProgressUI();
   }
 
-  function saveState(){localStorage.setItem('simulado_contabil_v1', JSON.stringify(estado));}
+  function saveState(){localStorage.setItem('simulado_contabil_v2', JSON.stringify(estado));}
 
   function renderQuestion(){
     const q = questoes[estado.index];
@@ -451,7 +449,6 @@
       <div style="margin-top:10px;color:var(--muted);font-size:13px">${estado.respostas[estado.index] === null ? 'Você ainda não respondeu esta questão.' : 'Resposta marcada: ' + String.fromCharCode(65+estado.respostas[estado.index])}</div>
     `;
 
-    // listeners para alternativas
     document.querySelectorAll('.alt').forEach(el=>{
       el.addEventListener('click', ()=>{
         const choice = Number(el.getAttribute('data-index'));
@@ -545,20 +542,17 @@
     detailsContainer.innerHTML = `<h3>Detalhamento das questões</h3>${detalhesHtml}`;
     document.getElementById('app').appendChild(detailsContainer);
 
-    // Esconde os botões de controle e mostra apenas o de reiniciar
     prevBtn.style.display = 'none';
     nextBtn.style.display = 'none';
     submitBtn.style.display = 'none';
-    resetBtn.style.marginLeft = 'auto'; // Move o reiniciar para a direita
+    resetBtn.style.marginLeft = 'auto';
   }
 
   function recomendacaoPorCategoria(cat){
     const dicas = {
-      'Contabilidade - CPC 16': 'Revisar a regra de mensuração "custo ou valor realizável líquido, dos dois o menor". Foque nos itens que compõem o custo de aquisição e de transformação e nos custos que devem ser tratados como despesa. Pratique cálculos de perda por desvalorização.',
-      'Contabilidade - CPC 14': 'Focar nos critérios de classificação de ativos financeiros (Custo Amortizado, VJORA e VJR), especialmente no teste do modelo de negócios e no teste de fluxos de caixa (SPPJ). Estude o tratamento de custos de transação e o conceito de perda de crédito esperada.',
-      'Direito Constitucional': 'Revisar os conceitos de direitos e garantias fundamentais, estudo de casos e interpretação constitucional. Consulte resumos, esquemas e resolução de questões comentadas para fixar.' ,
-      'Administração Pública': 'Foque no princípio da legalidade, poderes e deveres da administração, e diferenciação entre atos administrativos e atos judiciais. Faça exercícios práticos com análise de enunciados.' ,
-      'Língua Portuguesa': 'Reforce concordância verbal e nominal, análise sintática e leitura interpretativa. Pratique com exercícios de gramática contextualizados.'
+      'Contabilidade - CPC 16 (VRL)': 'Foque na fórmula do VRL (Preço de Venda - Custos de Conclusão - Despesas de Venda) e na regra de ouro: "custo ou VRL, o menor". Pratique exercícios de cálculo que envolvam o reconhecimento e a reversão de perdas.',
+      'Contabilidade - PECLD': 'Entenda a natureza prospectiva do modelo de perdas esperadas. Estude como funciona a matriz de provisionamento para contas a receber e pratique os lançamentos contábeis de constituição, baixa e reversão da PECLD.',
+      'Contabilidade - CPC 25 (Provisões)': 'Memorize os três critérios para reconhecer uma provisão (obrigação presente, saída provável, estimativa confiável). Saiba diferenciar claramente provisão, passivo contingente (divulgação) e ativo contingente.'
     };
     return dicas[cat] || 'Revisar o conteúdo teórico, priorizando questões comentadas e resumos estruturados.';
   }
@@ -574,7 +568,6 @@
 
   function escapeHtml(s){ return String(s).replace(/[&<>"']/g, function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":"&#39;"}[m]}); }
 
-  // start
   init();
   </script>
 </body>
